@@ -27,13 +27,13 @@ createAccountButton.addEventListener("click", function() {
 
 // 獲取輸入框和下一步按鈕的引用
 var identifierId = document.getElementById("identifierId");
-var nextButton = document.getElementById("nextButton");
+var nextButton = document.getElementById("identifierNext"); // 將 ID 改為 "identifierNext"
 
-// 監聽下一步按鈕的點擊事件
-nextButton.addEventListener("click", function() {
-    // 檢查輸入框是否為空
-    if (identifierId.value.trim() === "") {
-        // 如果輸入框為空，彈出提示訊息
-        alert("請輸入電子郵件地址或電話號碼");
+// 監聽輸入框的鍵盤事件
+identifierId.addEventListener("keydown", function(event) {
+    // 檢查是否按下的是 Enter 鍵 (keyCode 為 13)
+    if (event.keyCode === 13) {
+        // 模擬點擊下一步按鈕
+        nextButton.click();
     }
 });
